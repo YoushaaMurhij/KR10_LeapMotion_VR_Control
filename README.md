@@ -9,7 +9,7 @@ A development and implementation of a VR application controlling an industrial m
 *Software:
  A Unity3D VR application containing the 3D model of the manipulator connected with the real robot and VR instruments.
  
- ![GitHub 3D model of the KUKA Manipulator in Unity3D](/.png)
+ ![GitHub 3D model of the KUKA Manipulator in Unity3D](/img1.jpg)
 
 # Data input methods
 1. IR stereo camera sensor (Leapmotion) : captures both hands movements in real time.
