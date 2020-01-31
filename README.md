@@ -25,6 +25,9 @@ A Unity3D VR application containing the 3D model of the manipulator connected wi
 * Inverse Kinematics is used to calculate the generalized parameters of the virtual robot.
 * Generalized parameters are sent to the joints of the real robot.
 
+ ![GitHub LeapMotion Data Visualization](/gif2.gif)
+
+
 
 
 
