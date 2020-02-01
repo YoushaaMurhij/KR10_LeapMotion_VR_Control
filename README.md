@@ -25,7 +25,18 @@ A Unity3D VR application containing the 3D model of the manipulator connected wi
 * Inverse Kinematics is used to calculate the generalized parameters of the virtual robot.
 * Generalized parameters are sent to the joints of the real robot.
 
+### Citation
+If you find our work useful in your research, please consider citing:
 
+        @article{MURHIJ2019203,
+            title = "An application to simulate and control industrial robot in virtual reality environment integrated with IR stereo camera sensor",
+            journal = "IFAC-PapersOnLine",
+            year = "2019",
+            note = "19th IFAC Conference on Technology, Culture and International Stability TECIS 2019",
+            issn = "2405-8963",
+            doi = "https://doi.org/10.1016/j.ifacol.2019.12.473",
+            author = "Youshaa Murhij and Vladimir Serebrenny",
+        }
 
 
 
