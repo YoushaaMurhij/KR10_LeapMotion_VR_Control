@@ -25,7 +25,7 @@ A Unity3D VR application containing the 3D model of the manipulator connected wi
 * Inverse Kinematics is used to calculate the generalized parameters of the virtual robot.
 * Generalized parameters are sent to the joints of the real robot.
 
-### Citation
+# Citation
 If you find our work useful in your research, please consider citing:
 
         @article{MURHIJ2019203,
@@ -38,6 +38,12 @@ If you find our work useful in your research, please consider citing:
             author = "Youshaa Murhij and Vladimir Serebrenny",
         }
 
-
-
+#Usage
+* Install Unity Software, SteamVr, HTC Vive
+* Clone this repository : $git clone https://github.com/YoushaaMurhij/KR10_LeapMotion_VR_Control.git  
+* Add dependencies: Vive Input, SteamVr to Unity.
+* Plug in HTC Vive VR instruments and LeapMotion sensor[Optional]
+* Create your own scene and Start.
+* Link real robot [Optional].
+* Enjoy :) 
 
