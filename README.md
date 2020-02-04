@@ -45,5 +45,6 @@ If you find our work useful in your research, please consider citing:
 * Plug in HTC Vive VR instruments and LeapMotion sensor [Optional].
 * Create your own scene and Start.
 * Connect the real KR10 robot [Optional].
-* Enjoy ::):
+* Enjoy :smiley:
+
 
