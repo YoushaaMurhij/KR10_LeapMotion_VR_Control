@@ -10,7 +10,7 @@ A Unity3D VR application containing the 3D model of the manipulator connected wi
  
  ![GitHub 3D model of the KUKA Manipulator in Unity3D](/img1.jpg)
 
-# Data input methods
+# Data input methods:
 1. IR stereo camera sensor (Leapmotion) : captures both hands movements in real time.
 2. AR/VR sensors ( HTC VIVE pro instruments) : captures head and controllers movements in real time.
 
