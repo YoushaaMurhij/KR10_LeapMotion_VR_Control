@@ -49,4 +49,4 @@ $git clone https://github.com/YoushaaMurhij/KR10_LeapMotion_VR_Control.git
 * Connect the real KR10 robot [Optional].
 * Enjoy :smiley:
 
-
+# License
