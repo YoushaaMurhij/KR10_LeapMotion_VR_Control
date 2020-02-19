@@ -50,5 +50,5 @@ $git clone https://github.com/YoushaaMurhij/KR10_LeapMotion_VR_Control.git
 * Enjoy :smiley:
 
 # ResearchGate:
-You can check my project on ![My ResearchGate Profile](https://www.researchgate.net/project/Manipulator-control-system-using-vision-system-and-artificial-intelligence)
+You can check my project on [My ResearchGate Profile](https://www.researchgate.net/project/Manipulator-control-system-using-vision-system-and-artificial-intelligence)
 
