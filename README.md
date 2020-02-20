@@ -37,7 +37,7 @@ If you find our work useful in your research, please consider citing:
             author = "Youshaa Murhij and Vladimir Serebrenny",
         }
 
-# Usage
+# Usage:
 * Install Unity Software, SteamVr, HTC Vive
 * Clone this repository :
 ```
