@@ -7,9 +7,10 @@ A development and implementation of a VR application controlling an industrial m
 Our Hardware part included an industrial manipulator connected to a PC using TCP/IP connection. In addition to AR/VR supported headset and controllers with an IR stereo camera (Leapmotion) as an option.
 * Software:
 A Unity3D VR application containing the 3D model of the manipulator connected with the real robot and VR instruments.
+
 <p align="center">
-  ![GitHub 3D model of the KUKA Manipulator in Unity3D](/img1.jpg)
-</p> 
+  <img width="460" height="300" src="(/img1.jpg">
+</p>
 
 # Data input methods:
 1. IR stereo camera sensor (Leapmotion) : captures both hands movements in real time.
