@@ -9,8 +9,9 @@ Our Hardware part included an industrial manipulator connected to a PC using TCP
 A Unity3D VR application containing the 3D model of the manipulator connected with the real robot and VR instruments.
 
 <p align="center">
-  <img width="460" height="300" src="(/img1.jpg">
-</p>
+  <img width="460" height="300" src="/img1.jpg">
+  ![GitHub 3D model of the KUKA Manipulator in Unity3D]) </img>
+</p> 
 
 # Data input methods:
 1. IR stereo camera sensor (Leapmotion) : captures both hands movements in real time.
