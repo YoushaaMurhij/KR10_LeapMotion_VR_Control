@@ -16,7 +16,9 @@ A Unity3D VR application containing the 3D model of the manipulator connected wi
 1. IR stereo camera sensor (Leapmotion) : captures both hands movements in real time.
 2. AR/VR sensors ( HTC VIVE pro instruments) : captures head and controllers movements in real time.
 
- ![GitHub 3D model of the KUKA Manipulator in Unity3D](/gif1.gif)
+<p align="center">
+  <img height="300" src="/gif1.gif"> </img>
+</p>
  
 # System Procedure:
 * Leapmotion: hand movements read as position coordinates  
