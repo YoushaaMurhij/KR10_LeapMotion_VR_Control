@@ -31,7 +31,6 @@ public class Position_Script : MonoBehaviour
         {
             v = pose.pos-v0 ;
         }
-        //print(v);
 
     }
 }
