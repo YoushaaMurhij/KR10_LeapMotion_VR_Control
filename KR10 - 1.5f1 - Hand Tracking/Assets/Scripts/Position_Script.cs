@@ -13,7 +13,6 @@ public class Position_Script : MonoBehaviour
     {
         v0 = VivePose.GetPoseEx(HandRole.RightHand).pos; // last known position of left controller
     }
-    // Update is called once per frame
     void Update()
     {
         RigidPose pose = VivePose.GetPoseEx(HandRole.RightHand);
