@@ -62,7 +62,6 @@ public class MainCode : MonoBehaviour {
                 Y = hand.PalmPosition.x;
                 Z = hand.PalmPosition.y;
             }
-            //Vector3 handPosition = hand.PalmPosition.ToVector3();
             if (LeapBOOL)
             {
                 x = Variables.xyz_ref[0] + X * Factor_LM;
