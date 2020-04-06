@@ -1,5 +1,6 @@
 # KR10_LeapMotion_VR_Control
 ![Size](https://github-size-badge.herokuapp.com/:owner/:repo.svg)
+
  Online/Offline Control of KUKA-KR10 using Leapmotion sensor and VR controllers inside Unity Environment.
 # In this repo:
 A development and implementation of a VR application controlling an industrial manipulator was done to improve the usability of this manipulator and enable the interaction between the user and the robot and its workspace features
