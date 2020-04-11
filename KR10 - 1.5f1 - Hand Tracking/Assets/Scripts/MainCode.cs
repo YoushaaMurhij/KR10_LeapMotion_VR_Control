@@ -28,14 +28,15 @@ public class MainCode : MonoBehaviour {
         //================================RoboDK Code==============================================
         RoboDK RDK = new RoboDK();
         Variables.ROBOT = RDK.ItemUserPick("Select a robot", RoboDK.ITEM_TYPE_ROBOT);
-        if (Variables.ROBOT.Connect())
-        {
-            RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
-        }
-        else
-        {
-            RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
-        }
+        // if (Variables.ROBOT.Connect())
+        // {
+        //     RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
+        // }
+        // else
+        // {
+        //     RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
+        // }
+        RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
         //Variables.ROBOT.MoveJ(home_joints);
         Mat frame = Variables.ROBOT.PoseFrame();
         //Mat tool = Variables.ROBOT.PoseTool();
@@ -55,14 +56,14 @@ public class MainCode : MonoBehaviour {
         Frame frame = provider.CurrentFrame;
         if (frame != null)
         {
-            if (frame.Hands.Count > 0)
+            //if (frame.Hands.Count > 0)
             //foreach (Hand hand in frame.Hands)
-            {
-                Hand hand = frame.Hands[0];
-                X = hand.PalmPosition.z;
-                Y = hand.PalmPosition.x;
-                Z = hand.PalmPosition.y;
-            }
+            //{
+            Hand hand = frame.Hands[0];
+            X = hand.PalmPosition.z;
+            Y = hand.PalmPosition.x;
+            Z = hand.PalmPosition.y;
+            //}
             //Vector3 handPosition = hand.PalmPosition.ToVector3();
             if (LeapBOOL)
             {
@@ -76,6 +77,7 @@ public class MainCode : MonoBehaviour {
                 y = Variables.xyz_ref[1] - Position_Script.v.x * Factor_VR;
                 z = Variables.xyz_ref[2] + Position_Script.v.y * Factor_VR;
             }
+            
             Variables.target_pose.setPos(x, y, z);
             Variables.ROBOT.MoveL(Variables.target_pose);
             joints = Variables.ROBOT.Joints();
