@@ -9,10 +9,12 @@ public class Position_Script : MonoBehaviour
 {
     public static Vector3 v;
     Vector3 v0;
+    //// Start is called before the first frame update
     void awake()
     {
         v0 = VivePose.GetPoseEx(HandRole.RightHand).pos; // last known position of left controller
     }
+    // Update is called once per frame
     void Update()
     {
         RigidPose pose = VivePose.GetPoseEx(HandRole.RightHand);
@@ -29,6 +31,7 @@ public class Position_Script : MonoBehaviour
         {
             v = pose.pos-v0 ;
         }
+        //print(v);
 
     }
 }

@@ -25,6 +25,7 @@ public class MainCode : MonoBehaviour {
     public bool HandBOOL = true;
     public bool BO2 = true;
     void Start () {
+        //================================RoboDK Code==============================================
         RoboDK RDK = new RoboDK();
         Variables.ROBOT = RDK.ItemUserPick("Select a robot", RoboDK.ITEM_TYPE_ROBOT);
         if (Variables.ROBOT.Connect())
@@ -62,6 +63,7 @@ public class MainCode : MonoBehaviour {
                 Y = hand.PalmPosition.x;
                 Z = hand.PalmPosition.y;
             }
+            //Vector3 handPosition = hand.PalmPosition.ToVector3();
             if (LeapBOOL)
             {
                 x = Variables.xyz_ref[0] + X * Factor_LM;
