@@ -20,23 +20,21 @@ public class MainCode : MonoBehaviour {
     double[] joints;
     double[] home_joints = { 0, -45, 45, 1, 45, 5 }; // home joints, in deg
     public static int alpha1=0, alpha2=-90, alpha3=90, alpha4=0, alpha5=0, alpha6=0;
-    public bool LeapBOOL = true;
+    public bool LeapBOOL = false;
     public bool ContBOOL = true;
     public bool HandBOOL = true;
     public bool BO2 = true;
     void Start () {
-        //================================RoboDK Code==============================================
         RoboDK RDK = new RoboDK();
         Variables.ROBOT = RDK.ItemUserPick("Select a robot", RoboDK.ITEM_TYPE_ROBOT);
-        // if (Variables.ROBOT.Connect())
-        // {
-        //     RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
-        // }
-        // else
-        // {
-        //     RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
-        // }
-        RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
+        if (Variables.ROBOT.Connect())
+        {
+            RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
+        }
+        else
+        {
+            RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
+        }
         //Variables.ROBOT.MoveJ(home_joints);
         Mat frame = Variables.ROBOT.PoseFrame();
         //Mat tool = Variables.ROBOT.PoseTool();
@@ -53,33 +51,31 @@ public class MainCode : MonoBehaviour {
     void Update () {
         int Factor_VR = 70;
         int Factor_LM = 400; //400
-        Frame frame = provider.CurrentFrame;
-        if (frame != null)
+        if (LeapBOOL)
         {
-            //if (frame.Hands.Count > 0)
-            //foreach (Hand hand in frame.Hands)
-            //{
-            Hand hand = frame.Hands[0];
-            X = hand.PalmPosition.z;
-            Y = hand.PalmPosition.x;
-            Z = hand.PalmPosition.y;
-            //}
-            //Vector3 handPosition = hand.PalmPosition.ToVector3();
-            if (LeapBOOL)
+            Frame frame = provider.CurrentFrame;
+            if (frame != null)
             {
+                //if (frame.Hands.Count > 0)
+                Hand hand = frame.Hands[0];
+                X = hand.PalmPosition.z;
+                Y = hand.PalmPosition.x;
+                Z = hand.PalmPosition.y;
                 x = Variables.xyz_ref[0] + X * Factor_LM;
                 y = Variables.xyz_ref[1] - Y * Factor_LM;
                 z = Variables.xyz_ref[2] + Z * Factor_LM;
+                //Vector3 handPosition = hand.PalmPosition.ToVector3();
             }
-            else
-            {
-                x = Variables.xyz_ref[0] + Position_Script.v.z * Factor_VR;
-                y = Variables.xyz_ref[1] - Position_Script.v.x * Factor_VR;
-                z = Variables.xyz_ref[2] + Position_Script.v.y * Factor_VR;
-            }
-            
-            Variables.target_pose.setPos(x, y, z);
-            Variables.ROBOT.MoveL(Variables.target_pose);
+        }
+        else if (ContBOOL)
+        {
+            x = Variables.xyz_ref[0] + Position_Script.v.z * Factor_VR;
+            y = Variables.xyz_ref[1] - Position_Script.v.x * Factor_VR;
+            z = Variables.xyz_ref[2] + Position_Script.v.y * Factor_VR;
+        }
+
+        Variables.target_pose.setPos(x, y, z);
+            //Variables.ROBOT.MoveL(Variables.target_pose);
             joints = Variables.ROBOT.Joints();
             alpha1 = (int)joints[0];
             alpha2 = (int)joints[1];
@@ -87,18 +83,6 @@ public class MainCode : MonoBehaviour {
             alpha4 = (int)joints[3];
             alpha5 = (int)joints[4];
             alpha6 = (int)joints[5];
-
-            //using (System.IO.StreamWriter file =
-            //new System.IO.StreamWriter(@"C:\Users\Youshaa Murhij\Desktop\pos11.txt", true))
-            //{
-            //    file.WriteLine(x + " " + y + " " + z);
-            //}
-            //using (System.IO.StreamWriter file =
-            //new System.IO.StreamWriter(@"C:\Users\Youshaa Murhij\Desktop\pos12.txt", true))
-            //{
-            //    file.WriteLine((Variables.xyz_ref[0] + X * 65) + " " + (Variables.xyz_ref[1] - Y * 65) + " " + (Variables.xyz_ref[2] + Z * 65));
-            //}
-        }
     }
     //void OnGUI()
     //{
