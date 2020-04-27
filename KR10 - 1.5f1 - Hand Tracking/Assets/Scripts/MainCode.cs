@@ -23,7 +23,6 @@ public class MainCode : MonoBehaviour {
     public bool LeapBOOL = false;
     public bool ContBOOL = true;
     public bool HandBOOL = true;
-    public bool BO2 = true;
     int Factor_VR = 70;
     int Factor_LM = 400; //400
     void Start () {
@@ -65,11 +64,11 @@ public class MainCode : MonoBehaviour {
                     Y = hand.PalmPosition.x;
                     Z = hand.PalmPosition.y;
                 }
-                x = Variables.xyz_ref[0] + X * Factor_LM;
-                y = Variables.xyz_ref[1] - Y * Factor_LM;
-                z = Variables.xyz_ref[2] + Z * Factor_LM;
                 //Vector3 handPosition = hand.PalmPosition.ToVector3();
             }
+            x = Variables.xyz_ref[0] + X * Factor_LM;
+            y = Variables.xyz_ref[1] - Y * Factor_LM;
+            z = Variables.xyz_ref[2] + Z * Factor_LM;
         }
         else if (ContBOOL)
         {
@@ -77,27 +76,14 @@ public class MainCode : MonoBehaviour {
             y = Variables.xyz_ref[1] - Position_Script.v.x * Factor_VR;
             z = Variables.xyz_ref[2] + Position_Script.v.y * Factor_VR;
         }
-
         Variables.target_pose.setPos(x, y, z);
-            //Variables.ROBOT.MoveL(Variables.target_pose);
-            joints = Variables.ROBOT.Joints();
-            alpha1 = (int)joints[0];
-            alpha2 = (int)joints[1];
-            alpha3 = (int)joints[2];
-            alpha4 = (int)joints[3];
-            alpha5 = (int)joints[4];
-            alpha6 = (int)joints[5];
+        //Variables.ROBOT.MoveL(Variables.target_pose);
+        joints = Variables.ROBOT.Joints();
+        alpha1 = (int)joints[0];
+        alpha2 = (int)joints[1];
+        alpha3 = (int)joints[2];
+        alpha4 = (int)joints[3];
+        alpha5 = (int)joints[4];
+        alpha6 = (int)joints[5];
     }
-    //void OnGUI()
-    //{
-    //    if (GUI.Button(new Rect(25, 25, 150, 30), "LeapMotion connect"))
-    //    {
-    //        LeapBOOL = true;
-    //    }
-    //    if (GUI.Button(new Rect(25, 60, 150, 30), "LeapMotion disconnect"))
-    //    {
-    //        // This code is executed when the Button is clicked
-    //        LeapBOOL = false;
-    //    }
-    //}
 }
