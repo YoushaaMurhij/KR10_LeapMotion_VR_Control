@@ -24,17 +24,20 @@ public class MainCode : MonoBehaviour {
     public bool ContBOOL = true;
     public bool HandBOOL = true;
     public bool BO2 = true;
+    int Factor_VR = 70;
+    int Factor_LM = 400; //400
     void Start () {
         RoboDK RDK = new RoboDK();
         Variables.ROBOT = RDK.ItemUserPick("Select a robot", RoboDK.ITEM_TYPE_ROBOT);
-        if (Variables.ROBOT.Connect())
-        {
-            RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
-        }
-        else
-        {
-            RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
-        }
+        // if (Variables.ROBOT.Connect())
+        // {
+        //     RDK.setRunMode(RoboDK.RUNMODE_RUN_ROBOT);
+        // }
+        // else
+        // {
+        //     RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
+        // }
+        RDK.setRunMode(RoboDK.RUNMODE_SIMULATE);
         //Variables.ROBOT.MoveJ(home_joints);
         Mat frame = Variables.ROBOT.PoseFrame();
         //Mat tool = Variables.ROBOT.PoseTool();
@@ -49,18 +52,19 @@ public class MainCode : MonoBehaviour {
         //Variables.ROBOT.MoveL(pose_ref);
     }
     void Update () {
-        int Factor_VR = 70;
-        int Factor_LM = 400; //400
         if (LeapBOOL)
         {
             Frame frame = provider.CurrentFrame;
             if (frame != null)
             {
-                //if (frame.Hands.Count > 0)
-                Hand hand = frame.Hands[0];
-                X = hand.PalmPosition.z;
-                Y = hand.PalmPosition.x;
-                Z = hand.PalmPosition.y;
+                if (frame.Hands.Count > 0)
+                {
+                    Debug.Log("Test");
+                    Hand hand = frame.Hands[0];
+                    X = hand.PalmPosition.z;
+                    Y = hand.PalmPosition.x;
+                    Z = hand.PalmPosition.y;
+                }
                 x = Variables.xyz_ref[0] + X * Factor_LM;
                 y = Variables.xyz_ref[1] - Y * Factor_LM;
                 z = Variables.xyz_ref[2] + Z * Factor_LM;

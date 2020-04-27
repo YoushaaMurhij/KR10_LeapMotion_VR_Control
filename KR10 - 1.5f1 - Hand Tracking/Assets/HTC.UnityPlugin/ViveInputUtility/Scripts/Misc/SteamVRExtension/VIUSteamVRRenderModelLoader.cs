@@ -1,5 +1,6 @@
 ﻿//========= Copyright 2016-2019, HTC Corporation. All rights reserved. ===========
 
+#pragma warning disable 0649
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,24 @@ namespace HTC.UnityPlugin.Vive.SteamVRExtension
             public string[] childModelNames;
             public int childCount;
             public Dictionary<int, Texture2D> textures;
+
+            public bool TryCreateMaterialForTexture(int textureID, Shader shader, out Material material)
+            {
+                Texture2D texture;
+                if (textures != null && textures.TryGetValue(textureID, out texture))
+                {
+                    material = new Material(shader)
+                    {
+                        mainTexture = texture,
+                    };
+                    return true;
+                }
+                else
+                {
+                    material = default(Material);
+                    return false;
+                }
+            }
         }
 
         public class Model

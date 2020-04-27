@@ -291,7 +291,83 @@
       "chords": [],
       "sources": [
         {
-          "path": "/user/hand/left/input/a",
+          "path": "/user/hand/right/input/system",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_00"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/system",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_00"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/b",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_01"
+            },
+            "touch": {
+              "output": "/actions/htc_viu/in/viu_touch_01"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/b",
+          "mode": "button",
+          "parameters": {},
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_01"
+            },
+            "touch": {
+              "output": "/actions/htc_viu/in/viu_touch_01"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/grip",
+          "mode": "button",
+          "parameters": {
+            "force_input": "force"
+          },
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_02"
+            },
+            "touch": {
+              "output": "/actions/htc_viu/in/viu_touch_02"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/left/input/grip",
+          "mode": "button",
+          "parameters": {
+            "force_input": "force"
+          },
+          "inputs": {
+            "click": {
+              "output": "/actions/htc_viu/in/viu_press_02"
+            },
+            "touch": {
+              "output": "/actions/htc_viu/in/viu_touch_02"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/a",
           "mode": "button",
           "parameters": {},
           "inputs": {
@@ -304,50 +380,15 @@
           }
         },
         {
-          "path": "/user/hand/left/input/trackpad",
-          "mode": "trackpad",
+          "path": "/user/hand/left/input/a",
+          "mode": "button",
           "parameters": {},
           "inputs": {
             "click": {
-              "output": "/actions/htc_viu/in/viu_press_32"
-            },
-            "position": {
-              "output": "/actions/htc_viu/in/viu_axis_0xy"
+              "output": "/actions/htc_viu/in/viu_press_07"
             },
             "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_32"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/htc_viu/in/viu_press_33"
-            },
-            "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_1x"
-            },
-            "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_33"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/htc_viu/in/viu_press_33"
-            },
-            "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_1x"
-            },
-            "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_33"
+              "output": "/actions/htc_viu/in/viu_touch_07"
             }
           }
         },
@@ -368,73 +409,92 @@
           }
         },
         {
-          "path": "/user/hand/right/input/a",
-          "mode": "button",
+          "path": "/user/hand/left/input/trackpad",
+          "mode": "trackpad",
           "parameters": {},
           "inputs": {
             "click": {
-              "output": "/actions/htc_viu/in/viu_press_07"
+              "output": "/actions/htc_viu/in/viu_press_32"
+            },
+            "position": {
+              "output": "/actions/htc_viu/in/viu_axis_0xy"
             },
             "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_07"
+              "output": "/actions/htc_viu/in/viu_touch_32"
             }
           }
         },
         {
-          "path": "/user/hand/left/input/b",
-          "mode": "button",
+          "path": "/user/hand/right/input/thumbstick",
+          "mode": "joystick",
           "parameters": {},
           "inputs": {
             "click": {
-              "output": "/actions/htc_viu/in/viu_press_01"
+              "output": "/actions/htc_viu/in/viu_press_32"
+            },
+            "position": {
+              "output": "/actions/htc_viu/in/viu_axis_2xy"
             },
             "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_01"
+              "output": "/actions/htc_viu/in/viu_touch_32"
             }
           }
         },
         {
-          "path": "/user/hand/right/input/b",
-          "mode": "button",
+          "path": "/user/hand/left/input/thumbstick",
+          "mode": "joystick",
           "parameters": {},
           "inputs": {
             "click": {
-              "output": "/actions/htc_viu/in/viu_press_01"
+              "output": "/actions/htc_viu/in/viu_press_32"
+            },
+            "position": {
+              "output": "/actions/htc_viu/in/viu_axis_2xy"
             },
             "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_01"
+              "output": "/actions/htc_viu/in/viu_touch_32"
             }
           }
         },
         {
-          "path": "/user/hand/left/input/grip",
+          "path": "/user/hand/right/input/trigger",
           "mode": "trigger",
           "parameters": {},
           "inputs": {
             "click": {
-              "output": "/actions/htc_viu/in/viu_press_02"
+              "output": "/actions/htc_viu/in/viu_press_33"
             },
             "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_2x"
+              "output": "/actions/htc_viu/in/viu_axis_1x"
             },
             "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_02"
+              "output": "/actions/htc_viu/in/viu_touch_33"
             }
           }
         },
         {
-          "path": "/user/hand/right/input/grip",
+          "path": "/user/hand/left/input/trigger",
           "mode": "trigger",
           "parameters": {},
           "inputs": {
             "click": {
-              "output": "/actions/htc_viu/in/viu_press_02"
+              "output": "/actions/htc_viu/in/viu_press_33"
             },
             "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_2x"
+              "output": "/actions/htc_viu/in/viu_axis_1x"
             },
             "touch": {
-              "output": "/actions/htc_viu/in/viu_touch_02"
+              "output": "/actions/htc_viu/in/viu_touch_33"
+            }
+          }
+        },
+        {
+          "path": "/user/hand/right/input/finger/index",
+          "mode": "trigger",
+          "parameters": {},
+          "inputs": {
+            "pull": {
+              "output": "/actions/htc_viu/in/viu_axis_3x"
             }
           }
         },
@@ -449,22 +509,12 @@
           }
         },
         {
-          "path": "/user/hand/left/input/finger/ring",
+          "path": "/user/hand/right/input/finger/middle",
           "mode": "trigger",
           "parameters": {},
           "inputs": {
             "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_4x"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/finger/pinky",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_4y"
+              "output": "/actions/htc_viu/in/viu_axis_3y"
             }
           }
         },
@@ -489,6 +539,16 @@
           }
         },
         {
+          "path": "/user/hand/left/input/finger/ring",
+          "mode": "trigger",
+          "parameters": {},
+          "inputs": {
+            "pull": {
+              "output": "/actions/htc_viu/in/viu_axis_4x"
+            }
+          }
+        },
+        {
           "path": "/user/hand/right/input/finger/pinky",
           "mode": "trigger",
           "parameters": {},
@@ -499,22 +559,12 @@
           }
         },
         {
-          "path": "/user/hand/right/input/finger/middle",
+          "path": "/user/hand/left/input/finger/pinky",
           "mode": "trigger",
           "parameters": {},
           "inputs": {
             "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_3y"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/finger/index",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "pull": {
-              "output": "/actions/htc_viu/in/viu_axis_3x"
+              "output": "/actions/htc_viu/in/viu_axis_4y"
             }
           }
         }
@@ -523,11 +573,11 @@
       "haptics": [
         {
           "output": "/actions/htc_viu/out/viu_vib_01",
-          "path": "/user/hand/left/output/haptic"
+          "path": "/user/hand/right/output/haptic"
         },
         {
           "output": "/actions/htc_viu/out/viu_vib_01",
-          "path": "/user/hand/right/output/haptic"
+          "path": "/user/hand/left/output/haptic"
         }
       ],
       "skeleton": []

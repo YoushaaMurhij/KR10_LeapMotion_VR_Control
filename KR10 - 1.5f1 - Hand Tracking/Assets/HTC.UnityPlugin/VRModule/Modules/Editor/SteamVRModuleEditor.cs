@@ -12,6 +12,12 @@ namespace HTC.UnityPlugin.VRModuleManagement
         {
             Add(new SymbolRequirement()
             {
+                symbol = "VIU_OPENVR_SUPPORT",
+                validateFunc = (req) => Vive.VIUSettingsEditor.supportOpenVR,
+            });
+
+            Add(new SymbolRequirement()
+            {
                 symbol = "VIU_OPENVR_API",
                 reqTypeNames = new string[] { "Valve.VR.OpenVR" },
                 reqFileNames = new string[] { "openvr_api.cs" },
@@ -35,18 +41,25 @@ namespace HTC.UnityPlugin.VRModuleManagement
             Add(new SymbolRequirement()
             {
                 symbol = "VIU_STEAMVR_1_2_0_OR_NEWER",
-                reqTypeNames = new string[] { "SteamVR_Events" },
+                reqAnyTypeNames = new string[] { "SteamVR_Events", "Valve.VR.SteamVR_Events" },
                 reqFileNames = new string[] { "SteamVR_Events.cs" },
             });
 
             Add(new SymbolRequirement()
             {
                 symbol = "VIU_STEAMVR_1_2_1_OR_NEWER",
-                reqMethods = new SymbolRequirement.ReqMethodInfo[]
+                reqAnyMethods = new SymbolRequirement.ReqMethodInfo[]
                 {
                     new SymbolRequirement.ReqMethodInfo()
                     {
                          typeName = "SteamVR_Events",
+                         name = "System",
+                         argTypeNames = new string[] { "Valve.VR.EVREventType" },
+                         bindingAttr = BindingFlags.Public | BindingFlags.Static,
+                    },
+                    new SymbolRequirement.ReqMethodInfo()
+                    {
+                         typeName = "Valve.VR.SteamVR_Events",
                          name = "System",
                          argTypeNames = new string[] { "Valve.VR.EVREventType" },
                          bindingAttr = BindingFlags.Public | BindingFlags.Static,
@@ -58,11 +71,17 @@ namespace HTC.UnityPlugin.VRModuleManagement
             Add(new SymbolRequirement()
             {
                 symbol = "VIU_STEAMVR_1_2_2_OR_NEWER",
-                reqFields = new SymbolRequirement.ReqFieldInfo[]
+                reqAnyFields = new SymbolRequirement.ReqFieldInfo[]
                 {
                     new SymbolRequirement.ReqFieldInfo()
                     {
                         typeName = "SteamVR_ExternalCamera+Config",
+                        name = "r",
+                        bindingAttr = BindingFlags.Public | BindingFlags.Instance,
+                    },
+                    new SymbolRequirement.ReqFieldInfo()
+                    {
+                        typeName = "Valve.VR.SteamVR_ExternalCamera+Config",
                         name = "r",
                         bindingAttr = BindingFlags.Public | BindingFlags.Instance,
                     }
@@ -106,6 +125,24 @@ namespace HTC.UnityPlugin.VRModuleManagement
                     {
                         typeName = "Valve.VR.SteamVR_ActionSet_Manager",
                         name = "UpdateActionStates",
+                        argTypeNames = new string[]
+                        {
+                            "System.Boolean",
+                        },
+                        bindingAttr = BindingFlags.Public | BindingFlags.Static,
+                    }
+                },
+            });
+
+            Add(new SymbolRequirement()
+            {
+                symbol = "VIU_STEAMVR_2_4_0_OR_NEWER",
+                reqMethods = new SymbolRequirement.ReqMethodInfo[]
+                {
+                    new SymbolRequirement.ReqMethodInfo()
+                    {
+                        typeName = "Valve.VR.SteamVR_Input",
+                        name = "GetActionsFilePath",
                         argTypeNames = new string[]
                         {
                             "System.Boolean",

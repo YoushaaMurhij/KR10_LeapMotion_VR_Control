@@ -235,10 +235,10 @@ namespace HTC.UnityPlugin.Vive.SteamVRExtension
                     Material material;
                     if (!m_materials.TryGetValue(model.textureID, out material))
                     {
-                        material = new Material(loadedShader)
+                        if (!renderModel.TryCreateMaterialForTexture(model.textureID, loadedShader, out material))
                         {
-                            mainTexture = renderModel.textures[model.textureID]
-                        };
+                            material = new Material(loadedShader);
+                        }
 
                         m_materials.Add(model.textureID, material);
                     }
@@ -270,10 +270,10 @@ namespace HTC.UnityPlugin.Vive.SteamVRExtension
                             Material material;
                             if (!m_materials.TryGetValue(model.textureID, out material))
                             {
-                                material = new Material(loadedShader)
+                                if (!renderModel.TryCreateMaterialForTexture(model.textureID, loadedShader, out material))
                                 {
-                                    mainTexture = renderModel.textures[model.textureID]
-                                };
+                                    material = new Material(loadedShader);
+                                }
 
                                 m_materials.Add(model.textureID, material);
                             }
@@ -343,7 +343,7 @@ namespace HTC.UnityPlugin.Vive.SteamVRExtension
         {
             componentState = default(RenderModel_ComponentState_t);
             var modeState = default(RenderModel_ControllerMode_State_t);
-            return vrRenderModels.GetComponentStateForDevicePath(loadedModelName, componentName, SteamVRModule.GetInputSrouceHandleForDevice(m_deviceIndex), ref modeState, ref componentState);
+            return vrRenderModels.GetComponentStateForDevicePath(loadedModelName, componentName, SteamVRModule.GetInputSourceHandleForDevice(m_deviceIndex), ref modeState, ref componentState);
         }
 #elif VIU_STEAMVR
         private static readonly uint s_sizeOfControllerStats = (uint)System.Runtime.InteropServices.Marshal.SizeOf(typeof(VRControllerState_t));

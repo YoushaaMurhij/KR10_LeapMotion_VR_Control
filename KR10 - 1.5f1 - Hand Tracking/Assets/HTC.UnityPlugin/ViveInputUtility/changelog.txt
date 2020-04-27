@@ -1,5 +1,94 @@
-﻿# Vive Input Utility for Unity - v1.10.2
+﻿# Vive Input Utility for Unity - v1.10.7
 Copyright (c) 2016-2019, HTC Corporation. All rights reserved.
+
+
+## Changes for v1.10.7:
+
+* Bug Fix
+  - Fix device AngularVelocity have zero value when UnityEngineVRModule activated
+  - Fix showing wrong model when Oculus Quest Controller connected
+  - Fix SteamVR_Action callback function isn't working when VIU input system is activated
+  - Fix bumper key isn't working when Vive Cosmos Controller connected
+  - Fix controller scroll isn't working in WaveVRModule
+
+* Improvement
+  - Now support WaveVR SDK new haptic API
+  - Hide most "field never assigned" warnings for serialized field in MonoBehaviour
+  - Add static controller model for Valve Index Controller
+  - Avoid ListPool from ambiguous reference (when Core RP Library installed)
+
+
+## Changes for v1.10.6:
+
+* Bug Fix
+  - Fix SteamVR Plugin v2.4.5 incompatibility due to action manifest path changes 5fb63198
+  - Fix some Oculus(Android) recommend settings not working in Unity 2019.1 or newer 1c8ebf78
+
+
+## Changes for v1.10.5:
+
+* Improvement
+  - Add platform supported define symbols
+  - Add VIVE Cosmos support
+  - Add Valve Index support
+  - Update bindings for Index controller to allow trackpad and thumbstick to work individually 
+  - Add Oculus Quest support
+  - Add Oculus Rift S support
+  - Add Unity XR input supports Oculus (Android)
+  - Update support WaveVR SDK 3.0.2 requires VR Supported
+  - Add support to WaveVR SDK 3.1
+  - Add default and custom AndroidManifest path in VIU Settings
+  - Add custom controller model in Simulator
+  - Add system input for left Oculus controller (OculusVRModule/UnityNativeModule)
+  - Reduce Component Menu path (HTC/VIU -> VIU)
+  - [VIUSettings] Update VIVE to OpenVR
+  - [VIUSettings] Update VIVE Focus to WaveVR
+  - [VIUSettings] Update Oculus (Android) to Oculus Android
+  - [VIUSettings] Update Oculus Rift & Touch to Oculus Desktop
+  - [VIUSettings] Update Oculus VR SDK download link
+  - [VIUSettings] Update Oculus Go to Oculus (Android)
+
+* Bug Fix
+  - [GoogleVRModule] Fix null exception and no input issue
+  - [PackageManager] Fix assertion error and null exception
+  - [VIUSettings] Fix no Oculus (Android) option
+  - [WaveVRModule] Fix cannot teleport in ControllerManagerSample scene
+  - [SteamVRInputBinding] Fix partial input bindings for VIVE Tracker
+  - [SteamVRModule] Fix Override Model bug
+  - [OculusVRModule] Fix no Axis2D(Touchpad) for Oculus Go controller
+  - [SteamVRModule] Fix no Cosmos grip button input
+
+
+## Changes for v1.10.4:
+
+* Improvement
+  - Replace WWW to UnityWebRequest
+  - Pointer3DInputModule no longer set EventSystem to DontDestroyOnLoad
+  - Add VRModuleInput2DType
+  - Split VIUSettings into partials
+  - Add VIVE Cosmos controller enum
+  - Improve OculusVR support
+  - Add install package button in VIUSettings
+  - Add WaveVR SDK 3.0.2 support
+  - Add autoScaleReticle setting
+
+* Bug Fix
+  - [OculusVRModule] Fix serial number conflict on Oculus device
+  - [UnityEngineVRModule] Fix input manager index out of bound
+  - [SteamVRModule] Fix swapping controllers will cause input events showing on wrong device
+  - [WaveVRModule] Fix left hand mode cannot show controller model
+  - [ExampleScene] Fix BodyRole center position transformation
+  - [ExampleScene] Fix ResetButton teleports if moved after Start()
+
+
+## Changes for v1.10.3:
+
+* Improvement
+  - [WaveVRModule] Support WaveVR simulator (Enable VIVE Focus support in Editor mode)
+
+* Bug Fix
+  - [WaveVRModule] Fix WaveVR tracking glitter issue
+  - [WaveVRModule] Fix VIU simulator cannot launch (ONLY enable VIU simulator)
 
 
 ## Changes for v1.10.2:

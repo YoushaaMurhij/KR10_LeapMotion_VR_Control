@@ -269,6 +269,16 @@
       "requirement": "optional"
     },
     {
+      "name": "/actions/htc_viu/in/viu_press_35",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
+      "name": "/actions/htc_viu/in/viu_touch_35",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
       "name": "/actions/htc_viu/out/viu_vib_01",
       "type": "vibration",
       "requirement": "optional"
@@ -376,6 +386,14 @@
     {
       "controller_type": "vive_tracker_keyboard",
       "binding_url": "bindings_vive_tracker.json"
+    },
+    {
+      "controller_type": "vive_cosmos",
+      "binding_url": "bindings_vive_cosmos.json"
+    },
+    {
+      "controller_type": "vive_cosmos_controller",
+      "binding_url": "bindings_vive_cosmos_controller.json"
     }
   ],
   "localization": [
@@ -430,7 +448,9 @@
       "/actions/htc_viu/in/viu_axis_2xy": "Axis2 X&Y (Thumbstick)",
       "/actions/htc_viu/in/viu_axis_3xy": "Axis3 X&Y",
       "/actions/htc_viu/in/viu_axis_4xy": "Axis4 X&Y",
-      "/actions/htc_viu/out/viu_vib_01": "Vibration"
+      "/actions/htc_viu/out/viu_vib_01": "Vibration",
+      "/actions/htc_viu/in/viu_press_35": "Press35 (Bumper)",
+      "/actions/htc_viu/in/viu_touch_35": "Touch35 (Bumper)"
     }
   ]
 }

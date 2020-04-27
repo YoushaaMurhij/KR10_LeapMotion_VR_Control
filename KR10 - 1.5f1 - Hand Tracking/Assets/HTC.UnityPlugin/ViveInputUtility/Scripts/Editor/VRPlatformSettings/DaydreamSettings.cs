@@ -7,6 +7,21 @@ using UnityEngine.Rendering;
 
 namespace HTC.UnityPlugin.Vive
 {
+    public class DaydreamRecommendedSettings : VIUVersionCheck.RecommendedSettingCollection
+    {
+        public DaydreamRecommendedSettings()
+        {
+            Add(new VIUVersionCheck.RecommendedSetting<bool>()
+            {
+                settingTitle = "Virtual Reality Supported with Daydream",
+                skipCheckFunc = () => !VIUSettingsEditor.canSupportDaydream,
+                currentValueFunc = () => VIUSettingsEditor.supportDaydream,
+                setValueFunc = v => VIUSettingsEditor.supportDaydream = v,
+                recommendedValue = true,
+            });
+        }
+    }
+
     public static partial class VIUSettingsEditor
     {
         public static bool canSupportDaydream
@@ -87,7 +102,7 @@ namespace HTC.UnityPlugin.Vive
                 const string title = "Daydream";
                 if (canSupport)
                 {
-                    support = m_foldouter.ShowFoldoutButtonOnToggleEnabled(new GUIContent(title), support);
+                    support = m_foldouter.ShowFoldoutButtonOnToggleEnabled(new GUIContent(title, "Google Pixel series, others"), support);
                 }
                 else
                 {
