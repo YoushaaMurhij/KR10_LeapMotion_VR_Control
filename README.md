@@ -45,12 +45,12 @@ If you find our work useful in your research, please consider citing:
         }
 
 # Usage:
-* Install Unity Software, SteamVr, HTC Vive
+* Install Unity Software, SteamVR, HTC VIVE
 * Clone this repository :
 ```
 $git clone https://github.com/YoushaaMurhij/KR10_LeapMotion_VR_Control.git  
 ```
-* Add dependencies: Vive Input, SteamVr to Unity.
+* ~Add dependencies: VIVE Input, SteamVR to Unity.~ [Done]
 * Plug in HTC Vive VR instruments and LeapMotion sensor [Optional].
 * Create your own scene and Start.
 * Connect the real KR10 robot [Optional].
