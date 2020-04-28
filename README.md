@@ -9,6 +9,9 @@ Our Hardware part included an industrial manipulator connected to a PC using TCP
 A Unity3D VR application containing the 3D model of the manipulator connected with the real robot and VR instruments.
 
 <p align="center">
+  <img width="460" height="300" src="/33.jpg"> </img>
+</p> 
+<p align="center">
   <img width="460" height="300" src="/img1.jpg"> </img>
 </p> 
 
